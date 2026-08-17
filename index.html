@@ -93,36 +93,10 @@
   .sec-title{font-family:var(--hand);font-size:clamp(1.75rem,6vw,4.8rem);font-weight:700;line-height:1;letter-spacing:0;color:var(--black);margin-bottom:16px;white-space:nowrap;max-width:none}
   .sec-intro{font-size:1.2rem;color:var(--grey);line-height:1.42}
 
-  /* WORK CAROUSEL */
-  .work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 24px;margin-bottom:44px}
-  .carousel-nav{display:flex;gap:10px;flex-shrink:0}
-  .cbtn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);font-size:18px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s var(--ease);display:flex;align-items:center;justify-content:center}
-  .cbtn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .cbtn:active{transform:scale(.94)}
-  .cbtn:disabled{opacity:.32;cursor:default}.cbtn:disabled:hover{background:var(--white);color:var(--ink);border-color:var(--line)}
-  .carousel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 20px;margin:0 -2px;scrollbar-width:none;cursor:grab}
-  .carousel::-webkit-scrollbar{display:none}
-  .carousel.dragging{cursor:grabbing;scroll-behavior:auto}
-  .carousel.dragging a{pointer-events:none}
-  #work.pinned{padding:0;border:none;background:var(--off)}
-  .work-track{position:relative}
-  .work-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:flex-start;gap:8px;padding:130px 0 110px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .work-sticky .wrap{width:100%}
-  .pinned .work-head{margin-bottom:48px;max-width:1080px;margin-left:auto;margin-right:auto;padding:0 40px}
-  .work-viewport{overflow:hidden;padding:6px 0 2px}.pinned .work-viewport{width:100vw;margin-left:calc(50% - 50vw);padding:6px 0 2px}
-  .pinned .carousel{overflow:visible;transition:none;scroll-snap-type:none;will-change:transform;padding-left:calc(40px + max(0px,(100vw - 1080px)/2));margin:0}.pinned .carousel::after{content:'';flex:0 0 24px}
-  .pinned .carousel.dragging{cursor:grab}
-  .scroll-track-hint{display:flex;align-items:center;gap:10px;margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-mute)}
-  .scroll-track-hint .bar{flex:1;height:3px;border-radius:100px;background:var(--line);overflow:hidden;max-width:220px}
-  .scroll-track-hint .bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:100px}
-  .pinned.nofx .work-sticky{position:static;height:auto}
-  .pinned.nofx .work-viewport{overflow-x:auto;scrollbar-width:none;width:auto;margin-left:0;padding:6px 40px 2px}
-  .pinned.nofx .work-viewport::-webkit-scrollbar{display:none}
-  .pinned.nofx .carousel{transform:none!important}
-  @media(max-width:760px){.pinned .work-sticky{position:static;height:auto;padding:80px 0}.pinned .work-viewport{overflow-x:auto;width:auto;margin-left:0;padding:6px 24px 2px}.pinned .work-head{padding:0 24px}.pinned .carousel{transform:none!important;gap:22px;padding-left:0}.pinned .carousel::after{display:none}.scroll-track-hint{display:none}}
-  @media(min-width:761px) and (max-height:920px){.work-sticky{padding:90px 0 70px}.pinned .work-head{margin-bottom:30px}.pinned .sec-title{font-size:clamp(1.75rem,6vw,4rem)}.ccard-top{height:122px}.scroll-track-hint{margin-top:18px}}
-  @media(min-width:761px) and (max-height:800px){.work-sticky{padding:48px 0 36px}.pinned .work-head{margin-bottom:14px}.pinned .sec-title{font-size:clamp(1.5rem,5.5vw,3.2rem)}.ccard-top{height:90px}.scroll-track-hint{margin-top:10px}}
-  .ccard{scroll-snap-align:start;flex:0 0 300px;display:flex;flex-direction:column;color:inherit;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+  /* WORK — featured projects */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:700px){.work-grid{grid-template-columns:1fr}}
+  .ccard{display:flex;flex-direction:column;color:inherit;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
   .ccard:hover{transform:translateY(-5px);box-shadow:0 26px 56px rgba(0,0,0,.09)}
   .ccard-top{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--white)}
   .ccard-top img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s var(--ease)}
@@ -228,7 +202,6 @@
     .about-lead{grid-template-columns:1fr;gap:32px}.about-photo{max-width:300px}.about-caps{grid-template-columns:1fr}
     .services-grid,.proc-grid{grid-template-columns:1fr 1fr}
     .foot-grid{flex-direction:column}
-    .ccard{flex:0 0 280px}
   }
   @media(max-width:640px){
     .wrap{padding:0 24px}
@@ -243,7 +216,6 @@
     .menu-btn[aria-expanded="true"]{color:var(--accent)}
     .services-grid,.proc-grid,.field-row{grid-template-columns:1fr}
     section{padding:80px 0}.hero{min-height:auto;padding:80px 0 72px}
-    .ccard{flex:0 0 84%}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -277,7 +249,7 @@
     <h1 class="hero-title reveal"><span class="sr-only">Create with Gera</span><span class="type-wrap" aria-hidden="true">Create with <span class="hl">Gera</span></span></h1>
     <p class="hero-sub reveal">I turn messy ideas into products people can actually use.</p>
     <div class="hero-ctas reveal">
-      <a href="#contact" class="btn btn-primary">Create</a>
+      <a href="#contact" class="btn btn-primary">Create with Gera</a>
       <a href="#work" class="btn btn-outline">See my work</a>
     </div>
   </div>
@@ -316,21 +288,16 @@
 </section>
 
 <!-- WORK -->
-<section id="work" class="pinned">
-  <div class="work-track" id="workTrack">
-    <div class="work-sticky">
-      <div class="wrap">
-        <div class="work-head">
-          <div class="sec-head reveal" style="margin-bottom:0">
-            <span class="sec-num">02 — Selected Work</span>
-            <h2 class="sec-title">Designed to solve.</h2>
-            <p class="sec-intro">Nonprofit, client, and product work — each with a clear job and a live result.</p>
-          </div>
-        </div>
-        <div class="work-viewport" id="workViewport">
-          <div class="carousel" id="carousel" tabindex="0" aria-label="Project carousel">
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02 — Selected Work</span>
+      <h2 class="sec-title">Designed to solve.</h2>
+      <p class="sec-intro">Nonprofit, client, and product work — each with a clear job and a live result.</p>
+    </div>
+    <div class="work-grid reveal">
       <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">01 / 07</span><span class="ccard-badge">Case study</span><img src="assets/selected-projects/ourspace.png" alt="OurSpace product screenshot" loading="lazy"></div>
+        <div class="ccard-top"><span class="ccard-index">01 / 02</span><span class="ccard-badge">Case study</span><img src="assets/selected-projects/ourspace.png" alt="OurSpace product screenshot" loading="lazy"></div>
         <div class="ccard-body">
           <h3>OurSpace</h3>
           <p>A private writing studio for Filipino fiction writers — six tools in one place, replacing five scattered apps.</p>
@@ -342,74 +309,15 @@
         </div>
       </div>
       <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">02 / 07</span><img src="assets/selected-projects/sikat-aurora.png" alt="Síkat-Aurora Inc. website screenshot" loading="lazy"></div>
+        <div class="ccard-top"><span class="ccard-index">02 / 02</span><img src="assets/selected-projects/sikat-aurora.png" alt="Síkat-Aurora Inc. website screenshot" loading="lazy"></div>
         <div class="ccard-body">
           <h3>Síkat-Aurora Inc.</h3>
           <p>A youth nonprofit site in Baler, Aurora, structured around three clear paths: volunteer, donate, sponsor.</p>
           <div class="ccard-foot"><span class="out">400+ volunteers · 1,100+ learners</span></div>
           <div class="ccard-btns">
-            <a class="ccard-btn primary full" href="https://sikat-aurora.vercel.app/" target="_blank" rel="noopener">Live website</a>
+            <a class="ccard-btn primary full" href="https://sikataurora.org/" target="_blank" rel="noopener">Live website</a>
           </div>
         </div>
-      </div>
-      <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">03 / 07</span><img src="assets/selected-projects/learnwithaaya.png" alt="Learn with Teacher Aiah landing page screenshot" loading="lazy"></div>
-        <div class="ccard-body">
-          <h3>Learn with Teacher Aiah</h3>
-          <p>A tutor landing page rebuilt around a single, clear inquiry action — from interested to booked.</p>
-          <div class="ccard-foot"><span class="out">↓ Fewer inquiry drop-offs</span></div>
-          <div class="ccard-btns">
-            <a class="ccard-btn primary full" href="https://learnwithaya.space/" target="_blank" rel="noopener">Live website</a>
-          </div>
-        </div>
-      </div>
-      <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">04 / 07</span><img src="assets/selected-projects/abenson-apple-store.png" alt="Abenson Apple Store page screenshot" loading="lazy"></div>
-        <div class="ccard-body">
-          <h3>Abenson — Apple Store</h3>
-          <p>A brand storefront for a major PH retailer. I shaped the product hierarchy so a large catalog feels curated.</p>
-          <div class="ccard-foot"><span class="out">↑ Clearer hierarchy</span></div>
-          <div class="ccard-btns">
-            <a class="ccard-btn primary full" href="https://www.abenson.com/brands/apple-store" target="_blank" rel="noopener">Live website</a>
-          </div>
-        </div>
-      </div>
-      <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">05 / 07</span><img src="assets/selected-projects/abenson-sleeppage.png" alt="Abenson Sleep Page screenshot" loading="lazy"></div>
-        <div class="ccard-body">
-          <h3>Abenson — Sleep Page</h3>
-          <p>A sleep-range landing page organized around how people actually choose: comfort, size, and budget.</p>
-          <div class="ccard-foot"><span class="out">↑ Guided journey</span></div>
-          <div class="ccard-btns">
-            <a class="ccard-btn primary full" href="https://www.abenson.com/sleep-page" target="_blank" rel="noopener">Live website</a>
-          </div>
-        </div>
-      </div>
-      <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">06 / 07</span><img src="assets/selected-projects/why-abz.png" alt="ABZ — Why ABZ page screenshot" loading="lazy"></div>
-        <div class="ccard-body">
-          <h3>ABZ — Why ABZ</h3>
-          <p>A Gen Z-focused lifestyle tech storefront under Abenson, positioning value, exclusive perks, and fast delivery for a younger audience.</p>
-          <div class="ccard-foot"><span class="out">Powered by Abenson</span></div>
-          <div class="ccard-btns">
-            <a class="ccard-btn primary full" href="https://abz.com.ph/why-abz" target="_blank" rel="noopener">Live website</a>
-          </div>
-        </div>
-      </div>
-      <div class="ccard static">
-        <div class="ccard-top"><span class="ccard-index">07 / 07</span><span class="ccard-badge">Prototype</span><img src="assets/selected-projects/google-review-automation.png" alt="Google Review Automation dashboard screenshot" loading="lazy"></div>
-        <div class="ccard-body">
-          <h3>Google Review Automation</h3>
-          <p>An internal dashboard prototype for automating and monitoring Google review responses across Abenson stores.</p>
-          <div class="ccard-foot"><span class="out">Figma prototype</span></div>
-          <div class="ccard-btns">
-            <a class="ccard-btn primary full" href="https://www.figma.com/proto/giiJkOmtjZv0q6H3NR2nnm/Google-Review-Automation?node-id=691-22817&p=f" target="_blank" rel="noopener">View prototype</a>
-          </div>
-        </div>
-      </div>
-          </div>
-        </div>
-        <div class="scroll-track-hint" aria-hidden="true"><span>Scroll to explore</span><span class="bar"><i id="workBar"></i></span></div>
       </div>
     </div>
   </div>
@@ -603,100 +511,6 @@
   }
 
 
-
-  (function(){
-    const sec=document.getElementById('work');
-    const track=document.getElementById('workTrack');
-    const car=document.getElementById('carousel');
-    const bar=document.getElementById('workBar');
-    const prev=document.getElementById('prevBtn'),next=document.getElementById('nextBtn');
-    if(!car||!track||!sec)return;
-
-    const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-    const mobile=()=>window.matchMedia('(max-width:760px)').matches;
-
-    // How far the cards must move horizontally to reveal the last one.
-    let maxX=0;
-    function measure(){
-      // reset any transform to measure natural width
-      car.style.transform='';
-      if(reduce||mobile()){
-        sec.classList.add('nofx');
-        track.style.height='';
-        car.style.transform='';
-        return;
-      }
-      sec.classList.remove('nofx');
-      // horizontal distance the row must travel so the last card is fully in view
-      const vp=document.getElementById('workViewport');
-      const overflow=car.scrollWidth - (vp?vp.clientWidth:car.clientWidth);
-      maxX=Math.max(0, overflow);
-      // Track height = pin viewport + travel, scaled by a comfort factor so the
-      // scrub feels deliberate (1px of scroll ≈ ~0.8px of card movement).
-      const COMFORT=1.25;
-      track.style.height=(window.innerHeight + maxX*COMFORT)+'px';
-      onScroll();
-    }
-
-    function onScroll(){
-      if(sec.classList.contains('nofx'))return;
-      const rect=track.getBoundingClientRect();
-      const total=track.offsetHeight - window.innerHeight; // scrollable distance
-      // progress 0..1 as the track scrolls past the top
-      let p=(-rect.top)/ (total||1);
-      p=Math.max(0,Math.min(1,p));
-      const x=-(p*maxX);
-      car.style.transform='translate3d('+x+'px,0,0)';
-      if(bar)bar.style.width=(p*100)+'%';
-      if(prev)prev.disabled=p<=0.001;
-      if(next)next.disabled=p>=0.999;
-    }
-
-    // Arrow buttons: jump the page scroll so the horizontal position shifts one card.
-    function nudge(dir){
-      if(sec.classList.contains('nofx')){
-        const c=car.querySelector('.ccard');const w=c?c.offsetWidth+22:380;
-        car.parentNode.scrollBy({left:dir*w,behavior:'smooth'});return;
-      }
-      const c=car.querySelector('.ccard');const cardW=c?c.offsetWidth+22:380;
-      const total=track.offsetHeight - window.innerHeight;
-      const perCard=(cardW/ (maxX||1))*total;
-      window.scrollBy({top:dir*perCard,behavior:'smooth'});
-    }
-    if(prev)prev.addEventListener('click',()=>nudge(-1));
-    if(next)next.addEventListener('click',()=>nudge(1));
-
-    document.addEventListener('scroll',onScroll,{passive:true});
-    window.addEventListener('resize',measure);
-    // recheck after fonts/images settle, then re-land on the URL hash target —
-    // the pin track's height grows once measured, which can leave an initial
-    // hash-navigation (e.g. resume.html -> index.html#services) scrolled to a
-    // stale mid-carousel position from before the track was resized.
-    window.addEventListener('load',()=>{
-      measure();
-      if(location.hash){
-        const target=document.querySelector(location.hash);
-        if(target) requestAnimationFrame(()=>target.scrollIntoView());
-      }
-    });
-    measure();
-
-    // Keyboard on the carousel still nudges
-    car.addEventListener('keydown',e=>{
-      if(e.key==='ArrowRight'){nudge(1);e.preventDefault()}
-      if(e.key==='ArrowLeft'){nudge(-1);e.preventDefault()}
-    });
-
-    // In fallback (nofx) mode, keep drag-to-scroll on the viewport
-    const vp=document.getElementById('workViewport');
-    if(vp){
-      let down=false,sx,sl,moved;
-      vp.addEventListener('mousedown',e=>{if(!sec.classList.contains('nofx'))return;down=true;moved=false;sx=e.pageX;sl=vp.scrollLeft;car.classList.add('dragging')});
-      window.addEventListener('mousemove',e=>{if(!down)return;const dx=e.pageX-sx;if(Math.abs(dx)>4)moved=true;vp.scrollLeft=sl-dx});
-      window.addEventListener('mouseup',()=>{down=false;car.classList.remove('dragging')});
-      vp.addEventListener('click',e=>{if(moved)e.preventDefault()},true);
-    }
-  })();
 
   (function(){
     const sel=document.getElementById('projType');
