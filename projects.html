@@ -188,7 +188,7 @@
       <div class="nav-dropdown">
         <a href="projects.html" class="nav-dropdown-toggle active">Projects <svg class="nav-caret" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dropdown-menu">
-          <a href="projects.html#web-design">Web Design</a>
+          <a href="projects.html">Web Design</a>
           <a href="projects.html">Graphic Designs</a>
         </div>
       </div>
@@ -204,7 +204,10 @@
   <div class="wrap">
     <div class="proj-filters reveal" role="tablist" aria-label="Filter projects by category">
       <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-      <button type="button" class="filter-btn" data-filter="web-design" role="tab" aria-selected="false">Web Design</button>
+      <button type="button" class="filter-btn" data-filter="landing-page" role="tab" aria-selected="false">Landing page</button>
+      <button type="button" class="filter-btn" data-filter="dashboard" role="tab" aria-selected="false">Dashboard</button>
+      <button type="button" class="filter-btn" data-filter="website" role="tab" aria-selected="false">Website</button>
+      <button type="button" class="filter-btn" data-filter="app" role="tab" aria-selected="false">App</button>
       <button type="button" class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
       <button type="button" class="filter-btn" data-filter="logo" role="tab" aria-selected="false">Logo</button>
       <button type="button" class="filter-btn" data-filter="ecommerce-promotion" role="tab" aria-selected="false">Ecommerce Promotion</button>
@@ -214,7 +217,7 @@
     </div>
     <div class="proj-list">
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="app">
         <a href="case-ourspace.html" class="proj-media"><span class="proj-badge">Case study</span><img src="assets/selected-projects/ourspace.png" alt="OurSpace screenshot"></a>
         <div class="proj-body">
           <span class="proj-index">01 / 07 — Product</span>
@@ -229,7 +232,7 @@
         </div>
       </div>
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="website">
         <div class="proj-media"><img src="assets/selected-projects/sikat-aurora.png" alt="Síkat-Aurora Inc. screenshot"></div>
         <div class="proj-body">
           <span class="proj-index">02 / 07 — Nonprofit</span>
@@ -243,7 +246,7 @@
         </div>
       </div>
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="landing-page">
         <div class="proj-media"><img src="assets/selected-projects/learnwithaaya.png" alt="Learn with Teacher Aiah screenshot"></div>
         <div class="proj-body">
           <span class="proj-index">03 / 07 — Landing page</span>
@@ -257,7 +260,7 @@
         </div>
       </div>
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="website">
         <div class="proj-media"><img src="assets/selected-projects/abenson-apple-store.png" alt="Abenson Apple Store screenshot"></div>
         <div class="proj-body">
           <span class="proj-index">04 / 07 — E-commerce</span>
@@ -271,7 +274,7 @@
         </div>
       </div>
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="landing-page">
         <div class="proj-media"><img src="assets/selected-projects/abenson-sleeppage.png" alt="Abenson Sleep Page screenshot"></div>
         <div class="proj-body">
           <span class="proj-index">05 / 07 — E-commerce</span>
@@ -285,7 +288,7 @@
         </div>
       </div>
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="website">
         <div class="proj-media"><img src="assets/selected-projects/why-abz.png" alt="ABZ — Why ABZ screenshot"></div>
         <div class="proj-body">
           <span class="proj-index">06 / 07 — E-commerce</span>
@@ -299,7 +302,7 @@
         </div>
       </div>
 
-      <div class="proj-entry reveal" data-category="web-design">
+      <div class="proj-entry reveal" data-category="dashboard">
         <div class="proj-media"><span class="proj-badge">Prototype</span><img src="assets/selected-projects/google-review-automation.png" alt="Google Review Automation screenshot"></div>
         <div class="proj-body">
           <span class="proj-index">07 / 07 — Internal tool</span>
@@ -518,7 +521,7 @@
   (function projectFilter(){
     const buttons=document.querySelectorAll('.filter-btn');
     const entries=document.querySelectorAll('.proj-entry');
-    const valid=['web-design','branding','logo','ecommerce-promotion','social-media-content','event-graphics','invitations'];
+    const valid=['landing-page','dashboard','website','app','branding','logo','ecommerce-promotion','social-media-content','event-graphics','invitations'];
     if(!buttons.length||!entries.length)return;
     function applyFilter(cat){
       entries.forEach(entry=>{
