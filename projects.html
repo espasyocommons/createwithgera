@@ -76,6 +76,7 @@
 
 
   .proj-filters{display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:56px;z-index:90;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(20px);padding:16px 0;margin-bottom:28px;border-bottom:1px solid var(--line-2)}
+  .filter-fade{display:none;position:sticky;right:0;align-self:stretch;flex:0 0 24px;margin-left:-24px;pointer-events:none;background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.95) 60%)}
   .filter-btn{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 18px;border-radius:100px;border:1px solid var(--line);background:var(--white);color:var(--grey);cursor:pointer;transition:transform .2s var(--ease),background .2s,color .2s,border-color .2s}
   .filter-btn:hover{border-color:var(--ink);color:var(--ink)}
   .filter-btn.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
@@ -112,6 +113,10 @@
 
   @media(max-width:900px){
     .proj-entry{grid-template-columns:1fr;gap:24px}
+    .proj-filters{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none}
+    .proj-filters::-webkit-scrollbar{display:none}
+    .filter-fade{display:block}
+    .filter-btn{flex:0 0 auto;scroll-snap-align:start;padding:11px 16px}
   }
   @media(max-width:680px){
     .proj-grid{grid-template-columns:1fr}
@@ -221,6 +226,7 @@
       <button type="button" class="filter-btn" data-filter="social-media-content" role="tab" aria-selected="false">Social Media Content</button>
       <button type="button" class="filter-btn" data-filter="event-graphics" role="tab" aria-selected="false">Event Graphics</button>
       <button type="button" class="filter-btn" data-filter="invitations" role="tab" aria-selected="false">Invitations</button>
+      <div class="filter-fade" aria-hidden="true"></div>
     </div>
     <div class="proj-list">
 
@@ -233,8 +239,9 @@
           <div class="proj-block"><h4>Approach</h4><p>Designed and built a single writing studio combining drafting, chapter organization, outline tools, and community feedback into one connected flow, launched in early access.</p></div>
           <div class="proj-block"><h4>Outcome</h4><p>A private studio that replaced five scattered apps with one.</p></div>
           <div class="proj-links">
-            <a href="case-ourspace.html" class="proj-btn primary">Read case study</a>
-            <a href="https://ourwriting.space/" target="_blank" rel="noopener" class="proj-btn ghost">Live website</a>
+            <a href="https://app.ourwriting.space/" target="_blank" rel="noopener" class="proj-btn primary">View app</a>
+            <a href="https://ourwriting.space/" target="_blank" rel="noopener" class="proj-btn ghost">Landing page</a>
+            <a href="case-ourspace.html" class="proj-btn ghost">Case study</a>
           </div>
         </div>
       </div>
