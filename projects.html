@@ -15,14 +15,16 @@
   :root{
     --black:#000000;--ink:#111111;--grey:#666666;--grey-2:#999999;--grey-mute:#6E6E6E;
     --line:#E6E6E6;--line-2:#F0F0F0;--white:#FFFFFF;--off:#F7F7F7;
-    --accent:#B83D24;--accent-bright:#E15235;--accent-ink:#A83620;--accent-wash:#FBEAE4;
+    --accent:#7CA8D9;--accent-bright:#AFD0EF;--accent-ink:#4A7AB0;--accent-wash:#E4F1FC;
+    --pink:#E8A4B8;--pink-bright:#F3CBD8;--pink-ink:#9C4A66;--pink-wash:#FCEEF2;
+    --green:#7A9B52;--green-bright:#A8C47E;--green-ink:#4F6934;--green-wash:#EEF4E4;
     --sans:'Nunito',-apple-system,system-ui,sans-serif;--hand:'Dreamy Notes Sans','Caveat',cursive;--mono:'JetBrains Mono',monospace;
     --ease:cubic-bezier(.22,.7,.28,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{font-family:var(--sans);background:var(--white);color:var(--ink);line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
-  ::selection{background:var(--ink);color:var(--white)}
+  ::selection{background:var(--accent);color:var(--white)}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
@@ -59,10 +61,10 @@
   .nav-dropdown-menu a:hover{background:var(--off);opacity:1!important}
 
   .btn{font-size:16px;font-weight:500;padding:13px 27px;border-radius:100px;transition:transform .2s var(--ease),background .2s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:7px}
-  .btn-primary{background:var(--ink);color:var(--white)}
+  .btn-primary{background:var(--accent);color:var(--white)}
   .btn-primary:hover{transform:scale(1.03)}
   .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-  .btn-outline:hover{background:var(--ink);color:var(--white);transform:scale(1.03)}
+  .btn-outline:hover{background:var(--accent);color:var(--white);transform:scale(1.03)}
 
   section{padding:110px 0}
   #proj-section{padding-top:48px}
@@ -79,7 +81,7 @@
   .filter-fade{display:none;position:sticky;right:0;align-self:stretch;flex:0 0 24px;margin-left:-24px;pointer-events:none;background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.95) 60%)}
   .filter-btn{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 18px;border-radius:100px;border:1px solid var(--line);background:var(--white);color:var(--grey);cursor:pointer;transition:transform .2s var(--ease),background .2s,color .2s,border-color .2s}
   .filter-btn:hover{border-color:var(--ink);color:var(--ink)}
-  .filter-btn.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+  .filter-btn.active{background:var(--accent);color:var(--white);border-color:var(--accent)}
   .proj-media.placeholder-media{display:flex;align-items:center;justify-content:center;background:var(--off)}
   .placeholder-label{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-2);text-align:center;padding:0 20px}
   .proj-list{display:flex;flex-direction:column}
@@ -88,7 +90,7 @@
   .proj-entry:last-child{border-bottom:none;padding-bottom:0}
   .proj-media{position:relative;display:block;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--off)}
   .proj-media img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-  .proj-badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;background:var(--accent);color:#fff;padding:5px 11px;border-radius:100px}
+  .proj-badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;background:rgba(255,255,255,.28);backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);border:1px solid rgba(255,255,255,.5);color:#fff;padding:5px 11px;border-radius:100px}
   .proj-index{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--grey-mute);display:block;margin-bottom:10px}
   .proj-body h2{font-family:var(--sans);font-size:1.7rem;font-weight:700;letter-spacing:-.02em;color:var(--black);margin-bottom:18px}
   .proj-block{margin-bottom:18px}
@@ -96,7 +98,7 @@
   .proj-block p{font-size:15px;color:var(--grey);line-height:1.6}
   .proj-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
   .proj-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;font-size:14px;font-weight:600;padding:11px 20px;border-radius:100px;transition:transform .2s var(--ease),background .2s,color .2s;border:1px solid var(--ink);cursor:pointer}
-  .proj-btn.primary{background:var(--ink);color:#fff}
+  .proj-btn.primary{background:var(--accent);color:#fff}
   .proj-btn.primary:hover{transform:translateY(-2px)}
   .proj-btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .proj-btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
@@ -136,7 +138,7 @@
     .proj-entry{padding:48px 0}
   }
 
-  footer{background:#A83620;color:#fff;padding:72px 0 32px;overflow:hidden}
+  footer{background:var(--green-ink);color:#fff;padding:72px 0 32px;overflow:hidden}
   .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.22)}
   .foot-brand{max-width:340px}
   .foot-brand .logo{margin-bottom:14px;color:#fff}
@@ -238,8 +240,8 @@
           <div class="proj-block"><h4>Approach</h4><p>Designed and built a single writing studio combining drafting, chapter organization, outline tools, and community feedback into one connected flow, launched in early access.</p></div>
           <div class="proj-block"><h4>Outcome</h4><p>A private studio that replaced five scattered apps with one.</p></div>
           <div class="proj-links">
-            <a href="https://app.ourwriting.space/" target="_blank" rel="noopener" class="proj-btn primary">View app</a>
-            <a href="https://ourwriting.space/" target="_blank" rel="noopener" class="proj-btn ghost">Landing page</a>
+            <a href="https://ourwriting.space/" target="_blank" rel="noopener" class="proj-btn primary">Web App</a>
+            <a href="https://ourspace.espasyo.org/" target="_blank" rel="noopener" class="proj-btn ghost">Website</a>
             <a href="case-ourspace.html" class="proj-btn ghost">Case study</a>
           </div>
         </div>
